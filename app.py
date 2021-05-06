@@ -55,18 +55,7 @@ all_options = { location: age_bands for location in locations}
 
 
 # Create Dash/Flask app
-app = dash.Dash(
-    __name__,
-    # external_stylesheets = [
-    #     dbc.themes.SLATE,  # Bootswatch theme
-    #     "https://use.fontawesome.com/releases/v5.9.0/css/all.css",],
-    # meta_tags = [{
-    #     "name": "description",
-    #     "content": "Live coronavirus news, statistics, and visualizations tracking the number of cases and death toll due to COVID-19, with up-to-date testing center information by US states and counties. Also provides current SARS-COV-2 vaccine progress and treatment research across different countries. Sign up for SMS updates."},
-    #     {"name": "viewport", "content": "width=device-width, initial-scale=1.0"}
-    # ]
-
-) #(external_stylesheets = [dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__,) #(external_stylesheets = [dbc.themes.BOOTSTRAP])
 app.config['suppress_callback_exceptions'] = True
 
 final_table = html.Div([dash_table.DataTable(
@@ -90,7 +79,7 @@ final_table = html.Div([dash_table.DataTable(
           ]) 
 
 plot_display = html.Div([dcc.Graph(id='plot-excess')])
-
+server = app.server  # for server deployment
 app.layout = html.Div(
                 id = 'content',
                 children=[
