@@ -4,7 +4,6 @@ click==7.1.2
 dash-core-components==1.10.1
 dash-flexbox-grid==0.2.1
 dash-html-components==1.0.3
-dash-bootstrap-components==0.12.2=pypi_0
 dash-renderer==1.5.1
 dash-table==4.8.1
 dash==1.13.4
